@@ -1,2 +1,2 @@
-# ag-ncia-de-viagens
-Projeto finaldo  modulo 2 Recode pro- criaçao de um site
+# agencia-de-viagens
+Projeto final do  modulo 2 Recode pro- criaçao do meu primeiro site utilizando html,css e Bootstrap.
