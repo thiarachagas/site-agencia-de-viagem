@@ -1,0 +1,160 @@
+algoritmo "CADASTRO DE CLIENTE DA EMPRESA DREAM TRAVEL"
+//RECODE PRO
+//ALUNA: THIARA CHAGAS SILVA
+//TRABALHO FINAL REFERENTE AO MODULO 2
+ 
+var
+
+   clientes: vetor[0..2] de caractere
+   tel: vetor[0..2] de inteiro
+   destino: vetor[0..2] de caractere
+   email:vetor[0..2] de caractere
+   nome,resp,dest: caractere
+   i,d,c,a, data,op: inteiro
+
+Procedimento inicial()         //PROCEDIMENTO PARA O MENU
+inicio
+      escreval()
+      escreval("AGÊNCIA DE VIAGEM DREAM TRAVEL")
+      escreval("==============================")
+      escreval("[1] Cadastrar Clientes")
+      escreval("[2] Cadastrar Destino")
+      escreval("[3] Consultar clientes cadastrados")
+      escreval("[4] Consultar Destino")
+      escreval("[5] Sair")
+      escreval()
+         EscrevaL("====> OPÇÃO: ")
+         Leia(op)
+      LimpaTela
+   Escolha op
+         Caso 1
+            Cadastrar_cliente()
+         Caso 2
+            Cadastro_destino()
+         Caso 3
+            Cliente_cadastrado()
+         Caso 4
+            Consultar_destino()
+         Caso 5
+            EscrevaL("Agradecemos a preferência")
+            Escreval("------Volte Sempre!------")
+      FimEscolha
+fimprocedimento
+
+Procedimento Cadastrar_cliente()   //PROCEDIMENTO PARA O CADASTRO DO CLIENTE
+inicio
+
+   para i de 0 ate 2 faca
+     se (clientes[i]="") entao
+
+         escreval("Digite o nome completo do cliente:")
+         leia(clientes[i])
+
+         escreval("Digite a data de nascimento do cliente:")
+         leia(data)
+
+         escrevaL("Digite o email do cliente:")
+         leia(email[i])
+
+         escreval("Digite o telefone do cliente")
+         leia(tel[i])
+
+         escreval("Qual sera o destino do cliente?")
+         leia(destino[i])
+         escreva()
+         Escreval("Cadastro realizado com sucesso, obrigado pela preferência!")
+
+         inicial()
+         c <- c +1
+         limpatela
+   fimse
+       fimpara
+fimprocedimento
+
+
+Procedimento Cadastro_destino()   //PROCEDIMENTO PARA CADASTRAR O DESTINO
+inicio
+
+   para i de 0 ate 1 faca
+     se (destino[i]="") entao
+
+         escreval("Para qual lugar do mundo devemos fazer pacotes de viagem?:")
+         leia(destino[i])
+
+         escreval("Sugestão salva com sucesso!")
+         
+         inicial()
+
+         limpatela
+     fimse
+   fimpara
+fimprocedimento
+
+Procedimento Cliente_cadastrado() //PROCEDIMENTO PARA CONSULTAR CLIENTE CADASTRADO
+inicio
+  a <- 0
+
+   escreval("ENCONTRE SEU CADASTRO...")
+   escreval()
+
+   escreva("Informe o nome do(a) cliente: ")
+   leia(nome)
+   escreval()
+
+   para i de 0 ate 1 faca
+
+      se (nome=clientes[i]) entao
+
+         escreval("Cliente: ", clientes[i]:30)
+         escreval("Telefone: ", tel[i]:11)
+         escreval("Destino: ", destino[i]:30)
+         escreval("email: ", email[i]:30)
+
+         a <- a + 1
+
+      fimse
+   fimpara
+
+   se a = 0 entao
+      escreval("Cliente não cadastrado!")
+      escreval()
+      
+      fimse
+     inicial ()
+     limpatela
+     
+fimprocedimento
+
+
+
+Procedimento Consultar_destino() // PROCEDIMENTO PARA CONSULTAR DESTINO
+inicio
+  d <- 0
+    Escreval("=====Veja se o seu destino ja está aqui!=====")
+   escreval("=========Destinos Cadastrados!================")
+   escreval("Informe o destino: ")
+   leia(dest)
+   escreval()
+
+   para i de 0 ate 1 faca
+
+      se(dest=destino[i]) entao
+         escreval("Oba! Destino cadastrado! Em breve estaremos viajando para: ", destino[i]:30)
+         d <- d + 1
+      fimse
+   fimpara
+
+   se d = 0 entao
+      escreval("Esse destino ainda nao foi sugerido!")
+      escreval()
+
+      fimse
+     inicial ()
+     limpatela
+
+fimprocedimento
+
+inicio
+inicial ()
+fimalgoritmo
+      
