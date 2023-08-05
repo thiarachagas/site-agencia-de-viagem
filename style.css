@@ -31,13 +31,13 @@ body {
 
 /* Login Cadastro */
 .destaque {
-  color:white; 
+  color:black; 
   font-weight: bold; 
 }
 
 /* Personalização do link "Esqueceu sua senha?" */
 .form-text a {
-  color:white; 
+  color:black; 
   text-decoration: none; 
 }
 
