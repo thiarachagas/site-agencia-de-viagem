@@ -41,7 +41,10 @@ body {
   text-decoration: none; 
 }
 
-.footer {
+.pagamento {
+ color:white;
+}      
+     .footer {
   text-align: center;
   color:#fff
 }
