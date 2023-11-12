@@ -7,6 +7,7 @@ Criação de um pseudocódigo para simular um cadastro para uma agência de viag
 Criação de um protótipo da primeira versão do site utilizando HTML, CSS e Bootstrap. Criar as páginas: Home, Destino, Promoções, Contato e as demais páginas de acordo com seu modelo de negócio. As paginas devem ser responsivas.
 
 MÓDULO 03
+
 Modelagem de dados:
 Criar o modelo conceitual e lógico do banco de dados, usando uma ferramenta de modelagem de dados(BRmodelo);
 Criar as relações e cardinalidades entre as tabelas do modelo do banco;
@@ -19,6 +20,7 @@ Usar classes Java, JDBC e MySql.
 Front-end: Atualização da versão anterior do site, refatorando se preciso as páginas: Home, Destino, Promoções, Contato e as demais de acordo com seu modelo de dados usando HTML, CSS Bootstrap.
 
 MÓDULO 04
+
 Banco de dados: Ajustes no modelo lógico do banco de dados (Tabelas, atributos e relacionamentos) se houver necessidades, implementar o banco de dados no Mysql de forma manual ou usando o ORM (Object-Relational Mapping ou em português mapeamento objeto-relacional).
 
 Back-end: Construção o back-end usando tecnologias Java (Estrutura de dados Classes), conexão com MySql usando o padrão de projeto MVC (Implementado o CRUD básico para todas as tabelas do modelo de dados).
@@ -26,6 +28,7 @@ Back-end: Construção o back-end usando tecnologias Java (Estrutura de dados Cl
 Front-end: Criação de uma nova versão do site usando o padrão de projeto MVC (Model, View, Controller (Conectar todas as telas de cadastro ao banco de dados usando o padrão de projetos MVC).
 
 MÓDULO 05
+
 Seguindo padrões de projeto, vamos atualizar mais uma vez nossa aplicação WEB Agência de Viagens. Refatorar o código usando o Ecossistema Spring framework, com Front-end usando MVC ou ReactJS - Back-end com Java Spring Boot, Spring MVC, Persistência de Dados com Spring Data JPA e autenticação usando Spring Security. 
 
 Banco de dados: Criação / Atualização da base de dados usando o padrão NoSql (MongoDB) ou SQL relacional, atendendo as especificações do projeto, usando o framework Spring Data e as Tecnologias da plataforma e linguagem Java, aplicando ORM (Object-Relational Mapping ou em português mapeamento objeto-relacional).  
@@ -35,6 +38,7 @@ Back-end: Refatorar o código anterior usando os padrões de projeto MVC e Persi
 Front-end: As views da aplicação serão baseadas no padrão MVC usando opcionalmente a biblioteca React ou qualquer Java template engine (Thymeleaf).
  
 MÓDULO 06
+
 Usando tecnologias web DOT NET, vamos desenvolver uma aplicação web API em C# para consumir os dados da agencia de viagens (Somente consulta a base de dados), criaremos também uma versão mobile para consultar destinos de nossa agencia de viagens. 
 
 Banco de dados :
