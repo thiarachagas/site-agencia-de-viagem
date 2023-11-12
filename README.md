@@ -1,12 +1,12 @@
 # Projeto Agência de Viagem Dream Travel
 O projeto corresponde às atividades individuais do curso de Desenvolvedor FullStack da RECODE PRO.
 
-MÓDULO 02
+# MÓDULO 02
 
 Criação de um pseudocódigo para simular um cadastro para uma agência de viagens com as seguintes funções: cadastro de cliente e cadastro de destino, criar também uma consulta para cada estrutura de dados.
 Criação de um protótipo da primeira versão do site utilizando HTML, CSS e Bootstrap. Criar as páginas: Home, Destino, Promoções, Contato e as demais páginas de acordo com seu modelo de negócio. As paginas devem ser responsivas.
 
-MÓDULO 03
+# MÓDULO 03
 
 Modelagem de dados:
 Criar o modelo conceitual e lógico do banco de dados, usando uma ferramenta de modelagem de dados(BRmodelo);
@@ -19,7 +19,7 @@ Usar classes Java, JDBC e MySql.
 
 Front-end: Atualização da versão anterior do site, refatorando se preciso as páginas: Home, Destino, Promoções, Contato e as demais de acordo com seu modelo de dados usando HTML, CSS Bootstrap.
 
-MÓDULO 04
+# MÓDULO 04
 
 Banco de dados: Ajustes no modelo lógico do banco de dados (Tabelas, atributos e relacionamentos) se houver necessidades, implementar o banco de dados no Mysql de forma manual ou usando o ORM (Object-Relational Mapping ou em português mapeamento objeto-relacional).
 
@@ -27,7 +27,7 @@ Back-end: Construção o back-end usando tecnologias Java (Estrutura de dados Cl
 
 Front-end: Criação de uma nova versão do site usando o padrão de projeto MVC (Model, View, Controller (Conectar todas as telas de cadastro ao banco de dados usando o padrão de projetos MVC).
 
-MÓDULO 05
+# MÓDULO 05
 
 Seguindo padrões de projeto, vamos atualizar mais uma vez nossa aplicação WEB Agência de Viagens. Refatorar o código usando o Ecossistema Spring framework, com Front-end usando MVC ou ReactJS - Back-end com Java Spring Boot, Spring MVC, Persistência de Dados com Spring Data JPA e autenticação usando Spring Security. 
 
@@ -37,7 +37,7 @@ Back-end: Refatorar o código anterior usando os padrões de projeto MVC e Persi
   
 Front-end: As views da aplicação serão baseadas no padrão MVC usando opcionalmente a biblioteca React ou qualquer Java template engine (Thymeleaf).
  
-MÓDULO 06
+# MÓDULO 06
 
 Usando tecnologias web DOT NET, vamos desenvolver uma aplicação web API em C# para consumir os dados da agencia de viagens (Somente consulta a base de dados), criaremos também uma versão mobile para consultar destinos de nossa agencia de viagens. 
 
