@@ -2,6 +2,7 @@
 O projeto corresponde às atividades individuais do curso de Desenvolvedor FullStack da RECODE PRO.
 
 MÓDULO 02
+
 Criação de um pseudocódigo para simular um cadastro para uma agência de viagens com as seguintes funções: cadastro de cliente e cadastro de destino, criar também uma consulta para cada estrutura de dados.
 Criação de um protótipo da primeira versão do site utilizando HTML, CSS e Bootstrap. Criar as páginas: Home, Destino, Promoções, Contato e as demais páginas de acordo com seu modelo de negócio. As paginas devem ser responsivas.
 
