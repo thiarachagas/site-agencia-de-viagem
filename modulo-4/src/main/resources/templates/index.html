@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Dream Travel Agência de Viagens" />
+
+ <link rel="shortcut icon" href="img/icone.jpeg" type="image/x-icon">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" th:href="@{/css/style.css}">
+
+ <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+
+
+<title> Dream Travel | Agência de Viagens </title> 
+
+</head>
+<body>
+
+   <!-- CABEÇALHO -->
+
+   <div class="container-fluid">
+
+    <header>
+
+	    <nav class="bg-white navbar navbar-expand-sm navbar-light bg-light">
+	        <a class="navbar-brand" href="#">
+				<img th:src="@{/img/agencia_viagens_small.png}" alt="Logo" height="120px">
+			</a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	      <ul class="navbar-nav ml-auto">
+	        <li class="nav-item active">
+	          <a class="nav-link" href="index.html">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="destino.html">Destino</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="promocao.html">Promoções</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="contato.html">Contato</a>
+	        <li class="nav-item">
+	            <a class="nav-link" href="login.html">Login</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+    </header>
+   
+  <!-- Página inicial do site-->
+ 
+
+<!--Passagem-->
+  <div class="container-fluid bg-degrade">
+
+    <div class="container">
+
+        <form action="" method="">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h3 class="mt-3 text-light text-justify"> BUSCAR PASSAGENS </h3>
+
+                </div>
+
+                <div class="col-md-6 mt-3 text-justify">
+					
+					<label class="text-white">
+	                    <input type="radio" value="Ida e Volta">
+						Ida e Volta					
+					</label>
+					<label class="text-white">
+	                    <input type="radio" value="Somente Ida">
+	                    Somente Ida
+					</label>
+                </div>
+
+
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-md-6">
+
+                    <label class="text-light form-label" for="saida">De onde você está saindo?</label>
+
+                    <input type="text" class="form-control" name="destino" id="saida" aria-describedby="helpId"
+                        placeholder="Informe o ponto de partida" required>
+
+
+
+                </div>
+
+                <div class="col-md-6">
+
+
+                    <label class="text-light form-label" for="destino">Para onde você vai?</label>
+
+                    <input type="text" class="form-control" name="destino" id="destino" aria-describedby="helpId"
+                        placeholder="Informe o destino" required>
+
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="row mt-3">
+
+                <div class="col-md-6">
+
+                    <label class="text-light form-label" for="data">Escolha as datas (Ida / volta):</label>
+
+                    <input class="p-2" type="date" name="data" id="partida" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                        min="2023-01-01" max="2023-12-31" required="">
+
+                    <input class="p-2" type="date" name="data" id="destino" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                        min="2023-01-01" max="2023-12-31" required="">
+
+
+
+                </div>
+
+                <div class="col-md-6">
+
+
+                    <label class="text-light form-label" for="passageiros">Passageiros:</label>
+
+
+                    <input type="number" class="form-control" name="passageiros" id="passageiros"
+                        aria-describedby="helpId" min="1" placeholder="Quantidade passageiros" required="">
+
+                </div>
+
+
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-12 mb-3 text-justify">
+
+                    <button class="btn bg-buscar"> BUSCAR PASSAGENS </button>
+
+                </div>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+  <!--Seção de Viagens em Destaque --> 
+
+ <main class="container-fluid mb-5">
+     
+
+        <div class="col-12 mt-5 text-center">
+            <h2 class="mb-4 text-padrao"> Viagens em Destaque</h2>
+			<p> Aqui, você encontrará as melhores opções de viagens para os destinos mais incríveis do mundo. </p>
+        </div> 
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-center">
+        <img src="img/paris.jpg" class="card-img-top" alt="Paris">
+        <div class="card-body">
+          <h4 class="card-title">Paris</h4>
+          <p class="card-text text-danger m-0 small"> De <del> R$ 6.000 </del> Por </p>
+          <h4 class="card-text text-success"> R$ 5.3000 </h4>
+          
+          <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="col-md-3 col-sm-6">
+        <div class="card text-center">
+            <img class="card-img-top" src="img/Disney.jpg" alt="Disney">
+            <div class="card-body">
+                <h4 class="card-title">Disney</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 5.900 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 4.500 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+
+        <div class="card text-center">
+            <img class="card-img-top" src="img/gramado.jpg" alt="Gramado">
+            <div class="card-body">
+                <h4 class="card-title">Gramado-RS</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 950,00 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 550,00 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+
+        <div class="card text-center">
+            <img class="card-img-top" src="img/Bariloche.jpg" alt="Bariloche">
+            <div class="card-body">
+                <h4 class="card-title">Bariloche</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 3.200 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 2.500 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+
+        <div class="card text-center">
+            <img class="card-img-top" src="img/Rio.jpg" alt="Rio">
+            <div class="card-body">
+                <h4 class="card-title">Rio de Janeiro</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 1.100 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 850,00 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+
+        <div class="card text-center">
+            <img class="card-img-top" src="img/MorrodeSP.jpg" alt="Morro de Sao Paulo">
+            <div class="card-body">
+                <h4 class="card-title">Morro de São Paulo</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 2.500 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 1.500 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+
+        <div class="card text-center">
+            <img class="card-img-top" src="img/recife.jpg" alt="Recife">
+            <div class="card-body">
+                <h4 class="card-title">Recife</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 1.300 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 850,00 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+
+        <div class="card text-center">
+            <img class="card-img-top" src="img/betocarrero.jpg" alt="betocarrero">
+            <div class="card-body">
+                <h4 class="card-title">Beto Carrero World</h4>
+                <p class="card-text text-danger m-0 small"> De <del> R$ 950,00 </del> Por </p>
+                <h4 class="card-text text-success"> R$ 550,00 </h4>
+
+                <a href="destino.html" class="btn btn-primary">Saiba Mais</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <i onclick="subirTela()" class="ri-arrow-up-s-line" id="icon-top"></i>
+
+    <footer class="container-fluid bg-light">
+
+        <div class="row mt-4 mb-5">
+
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="sobrenos.html"> Sobre nós </a>
+            </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="centraldeajuda.html"> Central de ajuda
+            </a> </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="duvidas.html"> Dúvidas </a> </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="trabalheconosco.html"> Trabalhe
+            conosco</a> </div>
+
+        </div>
+
+        <div class="row mt-4 mb-3">
+            <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script th:src="@{/js/todo.js}"></script>
+</body>
+
+</html>

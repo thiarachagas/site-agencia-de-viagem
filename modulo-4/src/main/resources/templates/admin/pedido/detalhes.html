@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+	<header th:replace="/admin/reusavel/reusavel::header">
+		Header
+	</header>
+	<main>
+		<div class="container pb-5">
+			<div class="d-flex mt-3 align-items-center">				
+				<a class="btn" th:href="@{/admin/pedido}">Voltar</a>
+				<h1>Pedidos</h1>
+			</div>
+			<div th:object="${item}">
+				<div>
+					ID: <span th:text="*{id}">ID</span>
+				</div>
+				<div>
+					Data da compra: <span th:text="*{dataCompra}">Data</span>
+				</div>
+				<div>
+					Hora da compra: <span th:text="*{horaCompra}">Hora</span>
+				</div>
+				<div>
+					Preço: <span th:text="*{precoCompra}">Preço</span>
+				</div>
+				<hr>
+				<div>
+					<h3>Cliente:</h3>
+					<div th:object="${item.cliente}">
+						<div>
+							CPF: <span th:text="*{cpf}">CPF</span>
+						</div>
+						<div>
+							E-mail: <span th:text="*{email}">E-mail</span>
+						</div>
+						<div>
+							Telefone: <span th:text="*{tel}">E-mail</span>
+						</div>						
+						<div>
+							Nome: <span th:text="*{nome}">Nome</span>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div>
+					<h3>Passagem:</h3>
+					<div th:object="${item.passagem}">
+						<div>
+							ID: <span th:text="*{id}">ID</span>
+						</div>
+						<div>
+							Origem: <span th:text="*{origem}">Origem</span>
+						</div>
+						<div>
+							Data de partida: <span th:text="*{dataPartida}">Data de partida</span>
+						</div>
+						<hr>
+						<div>
+							<h3>Destino:</h3> 
+							<div th:object="${item.passagem.destino}">
+								<div>
+									ID: <span th:text="*{id}">ID Destino</span>
+								</div>
+								<div>
+									Nome: <span th:text="*{nome}">Nome</span>
+								</div>
+								<div>
+									Localização: 
+									<span th:text="*{localizacao}">
+										Localização
+									</span>
+								</div>
+							</div>
+						</div>
+						<div th:object="${item.passagem.promocao}" 
+							th:if="${item.passagem.promocao != null}">
+							<hr>
+							<h3>Promoção:</h3>
+							<div>
+								ID: <span th:text="*{id}">ID Promoção</span>
+							</div>
+							<div>
+								Nome: <span th:text="*{nome}">Nome</span>
+							</div>
+							<div>
+								Data de Início: 
+								<span th:text="*{dataInicio}">Data de Início</span>
+							</div>
+							<div>
+								Data de Término:
+								<span th:text="*{dataTermino}">Data de Término</span>
+							</div>
+							<div>
+								Desconto:
+								<span th:text="*{desconto}">Desconto</span>
+							</div>
+						</div>
+						<hr>
+						<div>
+							<h3>Companhia Aérea:</h3>
+							<div th:object="${item.passagem.companhiaAerea}">
+								<div>
+									ID: <span th:text="*{id}">ID</span>
+								</div>
+								<div>
+									Nome: <span th:text="*{nome}">Nome</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div>
+					<h3>Forma de pagamento:</h3>
+					<div th:object="${item.formaPagamento}">
+						<div>
+							ID: <span th:text="*{id}">ID</span>
+						</div>
+						<div>
+							Nome: <span th:text="*{nome}">Nome</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</html>

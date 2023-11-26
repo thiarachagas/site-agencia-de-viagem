@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    justify-content: flex-start;}
+
+/*Barra de Scroll */
+    ::-webkit-scrollbar {
+        width: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-image: linear-gradient(40deg, #26b4fb, #26b4fb46);
+        border-radius: 5rem;
+    }
+      
+
+
+ /* Cabeçalho */
+ header img {
+    width: 14.3rem;
+}
+
+ /*navbar do menu*/
+ .navbar {
+    justify-content: flex-start;}
+
+
+/* BUSCAR PASSAGEM */
+    .bg-degrade {
+        background-image: linear-gradient(40deg, #1a2e46, #26b4fb);
+        padding: 1.6rem;
+    }
+    
+    
+    .bg-degrade h3 {
+        /*font-size: 2.7rem;*/
+    }
+    
+    .btn-buscar {
+        border: 0.1rem solid #fff;
+        transition: all 0.2s;
+    }
+    
+    .btn-buscar:hover {
+        background-color: #0354b8;
+    }
+    
+    .bg-buscar {
+        background-color: #025ece;
+        color: #fff;
+        border: 0.1rem solid #fff;
+        transition: all 0.2s;
+    }
+    
+    .bg-buscar:hover {
+        background-color: #025ece;
+        color: #fff;
+    }
+    
+    
+    input[type="date"] {
+        width: 16rem;
+        border: none;
+        border-radius: 0.5rem;
+    }
+
+
+    #icon-top {
+        background-color: #0354b8;
+        color: #ffffff;
+    
+        padding: 0.5rem 1rem;
+        text-align: center;
+        
+    
+        border-radius: 50%;
+        box-shadow: 0 0 0.1rem 0.1rem #ffffff;
+    
+        display: none;
+    
+        font-size: 2rem;
+        font-weight: bold;
+    
+        position: fixed;
+        right: 1rem;
+        bottom: 2rem;
+    
+        cursor: pointer;
+        z-index: 999;
+    }
+    
+    #icon-top:hover {
+        background-color: #1a2e46;
+    }
+    
+/* CENTRAL DE AJUDA */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.help-section {
+    padding: 60px 0;
+}
+
+.contact-options {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-card {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+#formulario-contato {
+    display: none;
+} 
+
+/*TRABALHE CONOSCO */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; 
+    padding: 0; 
+}
+
+
+.page-container {
+    background-color: #fff; 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 5px; /
+    
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+	width: initial;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/*PROMOÇAO */
+
+.animation {
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+
+.animation::after {
+    color: #d80b0b;
+    content:'';
+    animation: promocao 2s linear infinite;
+}
+
+@keyframes promocao {
+    0% {content:''}
+    50% {content:' POR TEMPO LIMITADO!!'}
+
+    100% {content:''}
+}  
+/* aba promoção */
+.preco-anterior {
+  text-decoration: line-through;
+  color: red;
+}
+
+
+
+
+
+
+
+
+    
+/* INÍCIO RODAPÉ */
+
+footer .text-right img {
+    width: 20rem;
+}
+
+
+.link_rodape {
+    text-decoration: none;
+    color: #1a2e46;
+
+}
+
+.accordion-button {
+    font-size: 1.6rem;
+}
+
+/* FIM RODAPÉ */
+
+
+
+
+
+
+
+ /*DUVIDAS  */
+/*Sobre Nós*/
