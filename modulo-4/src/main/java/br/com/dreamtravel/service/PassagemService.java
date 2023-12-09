@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,7 @@ public class PassagemService {
 	
 	public List<Passagem> findAll() {
 		
-		List<Passagem> lista = repository.findAll();
+		List<Passagem> lista = repository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 		return lista;
 	}
 	

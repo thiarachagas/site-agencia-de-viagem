@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.com.dreamtravel.model.Promocao;
@@ -18,7 +19,7 @@ public class PromocaoService {
 	
 	public List<Promocao> findAll() {
 		
-		List<Promocao> lista = repository.findAll();
+		List<Promocao> lista = repository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 		return lista;
 	}
 		
