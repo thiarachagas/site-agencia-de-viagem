@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Dream Travel Agência de Viagens" />
+
+	<link rel="shortcut icon" th:href="@{/img/icone.jpeg}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{/img/icone.png}" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<title> Dream Travel | Agência de Viagens </title> 
+</head>
+<body>
+   <!-- CABEÇALHO -->
+
+   <div class="container-fluid mt-3">
+
+        <header th:replace="reusavel::header">Header</header>
+
+    </div>
+
+    <main>
+
+        <!-- Seção de cabeçalho -->
+        <div class="header-section container">            
+            <div class="row mt-3">
+                <div class="col-12">
+                    <h3 class="text-center text-padrao"> Fale conosco </h3>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Seção principal -->
+        <div class="page-container">
+    
+            <div class="form-container container">
+                <div class="row mt-3">
+                    <form th:action="@{/contato}" th:object="${contato}" method="post" class="col-12">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control"
+                            	th:field="*{nome}"
+                         		placeholder="Digite seu nome" maxlength="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" class="form-control" 
+                            	th:field="*{email}"
+                            	placeholder="Digite seu e-mail (nome@dominio)" 
+                            	maxlength="40" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea class="form-control" rows="5" 
+                            	th:field="*{mensagem}"
+                            	placeholder="Digite sua mensagem aqui" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+      
+        <!-- Formas de pagamento -->
+        <div class="mt-4 container">
+            <h4>Formas de Pagamento</h4>
+            <img src="img/formasdepag.png" alt="Formas de Pagamento" class="img-fluid">
+        </div>
+    
+        <!-- Mapa de Localização -->
+        <div class="mt-5 container-fluid">
+            <div>
+                <h4>Localização</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.028149288526!2d-46.63611228554617!3d-23.55196126728761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c174d2a76e7%3A0xb6df4868d7b5e4d0!2sS%C3%A3o%20Paulo%20Tourist%20Center!5e0!3m2!1sen!2sbr!4v1623836546438!5m2!1sen!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+    </main>    
+    
+    <footer class="container-fluid bg-light">
+
+        <div class="row mb-3">
+            <div class="col-sm-6 mb-2 text-right">
+                <a href="../sobrenos.html">
+                    <img src="img/agencia_viagens_small.png" alt="" width="150px">
+                </a>
+            </div>
+
+            <div class="col-sm-6 text-justify">
+                <h5> Dream Travel </h5>
+                <p class="m-0 small">E-mail: dreamtravel@agenciadeviagens.com</p>
+                <p class="m-0 small">Rua Presidente Vargas, 123 - Centro, Rio De janeiro, RJ</p>
+                <p class="m-0 small">CEP:45634-905</p>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="sobrenos.html"> Sobre nós </a>
+            </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="centraldeajuda.html"> Central de ajuda
+            </a> </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="duvidas.html"> Dúvidas </a> </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="trabalheconosco.html"> Trabalhe
+            conosco</a> </div>
+        </div>
+
+        <div class="row mt-4 mb-3">
+            <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
+        </div>
+
+    </footer>
+
+<script src="todo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

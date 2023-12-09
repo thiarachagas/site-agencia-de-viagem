@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+    <header th:fragment="header">
+		<nav class="bg-white navbar navbar-expand-sm navbar-light bg-light">
+			
+	        <a class="navbar-brand" href="#">
+				<img th:src="@{/img/agencia_viagens_small.png}" alt="Logo" height="120px">
+			</a>
+			
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		      	<span class="navbar-toggler-icon"></span>
+		    </button>
+		    
+		    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	      		<ul class="navbar-nav ml-auto">
+			        <li class="nav-item active">
+		          		<a class="nav-link" th:href="@{/}">Home</a>
+			        </li>
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/destino}">Destino</a>
+			        </li>
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/promocao}">Promoções</a>
+			        </li>
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/passagem}">Passagem</a>
+			        </li>			        
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/contato}">Contato</a>
+			        <li class="nav-item">
+		            	<a class="nav-link" th:href="@{/login}">Login</a>
+			        </li>
+	      		</ul>
+		    </div>
+		</nav>
+	</header>
+</body>
+</html>

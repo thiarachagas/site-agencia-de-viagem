@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Dream Travel Agência de Viagens" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <link rel="shortcut icon" th:href="@{/img/icone.jpeg}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/img/icone.png}" type="image/x-icon">
+
+    <title> Dream Travel | Agência de Viagens </title> 
+</head>
+<body>
+
+   <div class="container-fluid mt-3">
+	   
+	   <!-- CABEÇALHO -->
+		<header th:replace="reusavel::header">Header</header>
+		
+	    <main class="container-fluid mb-5">
+	
+	        <div class="row mb-2">
+	            <div class="col-12 mt-5 text-center">
+	                <h2 class="mb-4 animation"> PACOTES COM ATÉ 50% DE DESCONTO </h2>
+	            </div>
+	        </div>
+
+	        <!--Maragogi-->
+	        <div class="row">
+	        	<div class="col-lg-4 col-md-6 col-sm-12 mb mb-4"
+	        		th:each="promocao : ${promocoes}" th:object="${promocao}">
+	        		<div class="card h-100 d-flex flex-column">
+	            		<img th:src="*{destino.imagemBase64}" class="card-img-top" alt="Maragogi">
+	        			<div class="card-body">
+					
+	                		<h5 class="card-title" th:text="*{destino.nome}">Maragogi</h5>
+	                
+			                <p class="card-text" th:text="*{destino.descricao}">
+								Maragogi é conhecido como o "Caribe brasileiro" pelas suas águas 
+								cristalinas e praias paradisíacas.
+							</p>
+	                
+			                <p class="card-text"> 
+			                    De 
+			                    <span class="preco-anterior">
+									<s>
+										R$ 
+										<span th:text="*{destino.precoMedio}">2,500.00</span>
+									</s>
+								</span>
+			                </p>
+			                
+			                <p>
+								<b>
+									Por apenas R$ 
+									<span th:text="*{valorPromocional}">1,500.00</span>
+								</b>
+							</p>
+							
+			                <!-- Button trigger modal -->
+			                <a class="btn bg-ver-mais" th:href="@{/passagem?idPromocao={id}(id=*{id})}">
+			                    Comprar passagem
+			                </a>
+	                
+	            		</div>
+	        		</div>
+	    		</div>
+			</div>
+			<!-- Formas de pagamento -->
+			<div class="mt-4">
+			  <h4>Formas de Pagamento</h4>
+		  		<img th:src="@{/img/formasdepag.png}" alt="Formas de Pagamento" class="img-fluid">
+			</div>
+		</main>
+	</div>
+
+
+<footer class="container-fluid bg-light">
+
+  <div class="row mt-4 mb-5">
+      <div class="col-lg-3 col-sm-4 small">
+		  <a class="link_rodape" href="html/quemsomos.html">Quem somos</a>
+      </div>
+      <div class="col-lg-3 col-sm-4 small">
+		  <a class="link_rodape" href="html/centralajuda.html">Central de ajuda</a>
+	  </div>
+      <div class="col-lg-3 col-sm-4 small">
+		  <a class="link_rodape" href="html/duvidas.html">Dúvidas</a>
+	  </div>
+      <div class="col-lg-3 col-sm-4 small"> 
+		  <a class="link_rodape" href="html/trabalheconosco.html">Trabalhe conosco</a>
+	  </div>
+  </div>
+
+  <div class="row mt-4 mb-3">
+      <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
+  </div>
+
+</footer>
+
+<script src="todo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+</body>
+
+</html>

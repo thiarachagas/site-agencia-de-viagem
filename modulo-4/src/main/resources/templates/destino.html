@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Dream Travel Agência de Viagens" />
+	<link rel="shortcut icon" href="img/icone.jpeg" type="image/x-icon">	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
+	<link rel="stylesheet" href="@{/css/style.css}">	
+	<link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+	<title> Dream Travel | Agência de Viagens </title> 
+</head>
+<body>
+
+   <!-- CABEÇALHO -->
+
+   <div class="container-fluid mt-3">
+
+		<header th:replace="reusavel::header">Header</header>
+   
+		  <div class="row mt-4">
+		      <div class="col-12 text-center">
+		          <h4 class="text-danger mb-4">NACIONAIS</h4>
+		      </div>
+		  </div>
+
+	</div>
+
+	<!-- DESTINOS NACIONAIS -->
+
+	<div class="container ">
+	
+		<div class="row mt-5" th:each="destino : ${destinosNacionais}" th:object="${destino}">
+			
+			<div class="col-md-5">	
+	      		<img class="img-fluid" th:src="*{imagemBase64}" th:alt="*{nome}">	
+	  		</div>
+		
+	      	<div class="col-md-6 text-center">
+		
+	      		<h6 class="text-justify mb-2 mt-2 font-weight-bold" th:text="*{nome}">Título</h6>
+
+	      		<p class="text-justify" th:text="*{descricao}">Descrição</p>
+	      		
+	      		<a class="btn" th:href="@{/passagem?idDestino={id}(id=*{id})}">
+					Passagens
+			  	</a>
+
+	      	</div>
+		
+		</div>  
+
+	</div>
+	
+	<!--Destino internacionais-->
+	<div class="container mt-5 mb-4">
+	
+	    <div class="row ">
+	        <div class="col-12 text-center">
+	            <h4 class="text-danger">INTERNACIONAIS</h4>
+	        </div>
+	
+	    </div>
+	
+	</div>
+
+	<div class="container">
+
+		<div class="row mt-5" th:each="destino : ${destinosInternacionais}" th:object="${destino}">
+			
+			<div class="col-md-5">	
+	      		<img class="img-fluid" th:src="*{imagemBase64}" th:alt="*{nome}">	
+	  		</div>
+			
+	      	<div class="col-md-6 text-center">
+		
+	      		<h6 class="text-justify mb-2 mt-2 font-weight-bold" th:text="*{nome}">Título</h6>
+
+	      		<p class="text-justify" th:text="*{descricao}">Descrição</p>
+
+	      		<a class="btn" th:href="@{/passagem?idDestino={id}(id=*{id})}">
+					Passagens
+			  	</a>
+
+	      	</div>
+		
+		</div>  
+
+    	<i onclick="subirTela()" class="ri-arrow-up-s-line" id="icon-top"></i>
+
+		<!-- Formas de pagamento -->
+		<div class="mt-4">
+		    <h4>Formas de Pagamento</h4>
+		    <img src="img/formasdepag.png" alt="Formas de Pagamento" class="img-fluid">
+		</div>
+		
+	</div>
+
+    <footer class="container-fluid bg-light">
+
+	    <div class="row mt-5 mb-5">
+	  
+	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="sobrenos.html"> Sobre Nós </a>
+	        </div>
+	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="centralajuda.html"> Central de ajuda
+	        </a> </div>
+	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="duvidas.html"> Dúvidas </a> </div>
+	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="trabalheconosco.html"> Trabalhe
+	        conosco</a> </div>
+	  
+	    </div>
+
+	    <div class="row mt-4 mb-3">
+	        <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
+	    </div>
+   
+    </footer>
+ 	<script src="todo.js"></script>
+
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	    crossorigin="anonymous"></script>
+</body>
+              
+</html>

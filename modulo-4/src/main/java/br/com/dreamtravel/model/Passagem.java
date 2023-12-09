@@ -56,6 +56,13 @@ public class Passagem implements Serializable {
 		return "Passagem [id=" + id + ", origem=" + origem + ", dataPartida=" + dataPartida + ", destino=" + destino
 				+ ", promocao=" + promocao + ", companhiaAerea=" + companhiaAerea + "]";
 	}
+	
+	public double calculaPrecoCompra() {
+		double precoMedio = destino.getPrecoMedio();
+		double desconto = promocao == null ? 0 : promocao.getDesconto();
+		return precoMedio - desconto;
+	}
+	
 	public Integer getId() {
 		return id;
 	}

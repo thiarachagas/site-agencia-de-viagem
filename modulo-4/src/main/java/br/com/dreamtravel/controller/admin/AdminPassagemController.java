@@ -24,7 +24,7 @@ import br.com.dreamtravel.service.PromocaoService;
 
 @Controller
 @RequestMapping("/admin/passagem")
-public class PassagemController {
+public class AdminPassagemController {
 
 	private String nome = "passagem";
 	

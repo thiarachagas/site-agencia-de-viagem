@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Dream Travel Agência de Viagens" />
+
+	<link rel="shortcut icon" href="img/icone.jpeg" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+
+
+	<title> Dream Travel | Agência de Viagens </title> 
+
+</head>
+<body>
+
+   <!-- CABEÇALHO -->
+
+	<div class="container-fluid">
+
+	    <header th:replace="reusavel::header">Header</header>
+   
+ 	</div>
+
+  	<!--Seção de Viagens em Destaque --> 
+
+	<main class="container-fluid mb-5">
+		
+		<div class="col-12 mt-5 text-center">
+	        <h2 class="mb-4 text-padrao">Passagens</h2>
+			<p>Aqui, você encontrará as melhores opções de viagens para os destinos mais incríveis do mundo.</p>
+	    </div> 
+	
+	 	<div class="row">
+			 
+	 		<div class="col-md-3 col-sm-6"
+			 	th:each="passagem : ${passagens}"
+			 	th:object="${passagem}">
+			 	
+	      		<div class="card text-center">
+	        		<img th:if="*{destino.imagem != null}" th:src="*{destino.imagemBase64}" 
+	        			class="card-img-top" alt="Paris">
+	        		<div class="card-body">
+			        	<h4 class="card-title" th:text="*{destino.nome}">Paris</h4>
+			        	<div th:if="*{promocao == null}">
+							R$ <span th:text="*{destino.precoMedio}">5.300</span> 
+						</div>
+						<div th:if="*{promocao != null}">						
+				        	<p class="card-text text-danger m-0 small">
+								De R$ <del th:text="*{destino.precoMedio}"> R$ 6.000 </del> Por 
+							</p>
+				        	<h4 class="card-text text-success">
+								R$ <span th:text="*{promocao.valorPromocional}">5.300</span> 
+							</h4>
+						</div>
+	          
+	          			<a th:href="@{/passagem/{id}(id=*{id})}" class="btn btn-primary">Saiba mais</a>
+	        		</div>
+      			</div>
+			</div>
+	    
+		</div>
+	</main>
+
+    <i onclick="subirTela()" class="ri-arrow-up-s-line" id="icon-top"></i>
+
+    <footer class="container-fluid bg-light">
+
+        <div class="row mt-4 mb-5">
+
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="sobrenos.html"> Sobre nós </a>
+            </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="centraldeajuda.html"> Central de ajuda
+            </a> </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="duvidas.html"> Dúvidas </a> </div>
+            <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="trabalheconosco.html"> Trabalhe
+            conosco</a> </div>
+
+        </div>
+
+        <div class="row mt-4 mb-3">
+            <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script th:src="@{/js/todo.js}"></script>
+</body>
+
+</html>

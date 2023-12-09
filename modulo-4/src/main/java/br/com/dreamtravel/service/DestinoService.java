@@ -23,6 +23,11 @@ public class DestinoService {
 		return lista;
 	}
 	
+	public List<Destino> findAllByInternacional(Boolean internacional) {
+		List<Destino> lista = repository.findAllByInternacional(internacional);
+		return lista;
+	}
+	
 	public Destino findById(Integer id) {
 		
 		Optional<Destino> destino = repository.findById(id);
@@ -38,9 +43,11 @@ public class DestinoService {
 		
 		Destino atual = findById(novo.getId());
 		atual.setNome(novo.getNome());
+		atual.setDescricao(novo.getDescricao());
 		atual.setLocalizacao(novo.getLocalizacao());
 		atual.setPrecoMedio(novo.getPrecoMedio());
-		
+		atual.setInternacional(novo.getInternacional());
+		atual.setImagem(novo.getImagem());		
 		return repository.save(atual);
 	}
 	

@@ -22,7 +22,6 @@ public class Promocao implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String descricao;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataInicio;
@@ -37,12 +36,11 @@ public class Promocao implements Serializable {
 	
 	public Promocao() {}
 	
-	public Promocao(Integer id, String nome, String descricao, LocalDate dataInicio, LocalDate dataTermino,
+	public Promocao(Integer id, String nome, LocalDate dataInicio, LocalDate dataTermino,
 			Double desconto, Destino destino) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.descricao = descricao;
 		this.dataInicio = dataInicio;
 		this.dataTermino = dataTermino;
 		this.desconto = desconto;
@@ -50,7 +48,7 @@ public class Promocao implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Promocao [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", dataInicio=" + dataInicio
+		return "Promocao [id=" + id + ", nome=" + nome +  ", dataInicio=" + dataInicio
 				+ ", dataTermino=" + dataTermino + ", desconto=" + desconto + ", destino=" + destino + "]";
 	}
 	public Integer getId() {
@@ -64,12 +62,6 @@ public class Promocao implements Serializable {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 	public LocalDate getDataInicio() {
 		return dataInicio;
@@ -94,5 +86,8 @@ public class Promocao implements Serializable {
 	}
 	public void setDestino(Destino destino) {
 		this.destino = destino;
+	}
+	public double getValorPromocional() {
+		return destino.getPrecoMedio() - desconto;
 	}
 }

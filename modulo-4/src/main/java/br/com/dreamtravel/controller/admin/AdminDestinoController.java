@@ -1,5 +1,6 @@
 package br.com.dreamtravel.controller.admin;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,33 +11,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.dreamtravel.model.Pedido;
-import br.com.dreamtravel.service.PedidoService;
+import br.com.dreamtravel.model.Destino;
+import br.com.dreamtravel.service.DestinoService;
 
+@RequestMapping("/admin/destino")
 @Controller
-@RequestMapping("/admin/pedido")
-public class PedidoController {
-
-	private String nome = "pedido";
+public class AdminDestinoController {
+	
+	private String nome = "destino";
 	
 	@Autowired
-	private PedidoService service;
+	private DestinoService service;
 
 	@GetMapping
 	public ModelAndView lista() {
 		
-		List<Pedido> lista = service.findAll();
+		List<Destino> destinos = service.findAll();
 		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/lista");
-		mav.addObject("lista", lista);
+		mav.addObject("lista", destinos);
 		return mav;
 	}
 	
 	@GetMapping("/novo")
 	public ModelAndView formularioCriar() {
 		
-		Pedido item = new Pedido();
+		Destino item = new Destino();
 		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/formulario");
 		mav.addObject("method", "POST");
 		mav.addObject("item", item);
@@ -46,23 +49,37 @@ public class PedidoController {
 	@GetMapping("/{id}")
 	public ModelAndView formularioEditar(@PathVariable Integer id) {
 		
-		Pedido item = service.findById(id);
-		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/detalhes");
+		Destino item = service.findById(id);
+		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/formulario");
+		mav.addObject("method", "PUT");
 		mav.addObject("item", item);
 		return mav;
 	}
 	
 	@PostMapping
-	public String create(Pedido novo) {
+	public String create(Destino item, @RequestParam("campoImagem") MultipartFile file) throws IOException {
 		
-		service.create(novo);
+		try {
+			item.setImagem(file.getBytes());
+			service.create(item);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		return "redirect:/admin/"+ nome;
 	}
 	
 	@PutMapping
-	public String update(Pedido novo) {
+	public String update(Destino item, @RequestParam("campoImagem") MultipartFile file) throws IOException {
 		
-		service.update(novo);
+		try {
+			item.setImagem(file.getBytes());
+			service.update(item);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 		return "redirect:/admin/"+ nome;
 	}
 	

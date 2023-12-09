@@ -21,7 +21,7 @@ public class PromocaoService {
 		List<Promocao> lista = repository.findAll();
 		return lista;
 	}
-	
+		
 	public Promocao findById(Integer id) {
 		
 		Optional<Promocao> promocao = repository.findById(id);
@@ -43,7 +43,6 @@ public class PromocaoService {
 		
 		Promocao atual = findById(novo.getId());
 		atual.setNome(novo.getNome());
-		atual.setDescricao(novo.getDescricao());
 		atual.setDataInicio(novo.getDataInicio());
 		atual.setDataTermino(novo.getDataTermino());
 		atual.setDesconto(novo.getDesconto());

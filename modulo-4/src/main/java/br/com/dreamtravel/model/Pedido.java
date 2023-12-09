@@ -58,7 +58,11 @@ public class Pedido implements Serializable {
 				+ ", cliente=" + cliente + ", passagem=" + passagem 
 				+ ", formaPagamento=" + formaPagamento + "]";
 	}
-
+	
+	public double calculaPrecoCompra() {
+		return passagem.calculaPrecoCompra();
+	}
+	
 	public Integer getId() {
 		return id;
 	}

@@ -3,6 +3,7 @@ package br.com.dreamtravel.controller.admin;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,57 +14,77 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dreamtravel.model.Destino;
+import br.com.dreamtravel.model.Promocao;
 import br.com.dreamtravel.service.DestinoService;
+import br.com.dreamtravel.service.PromocaoService;
 
-@RequestMapping("/admin/destino")
+@RequestMapping("/admin/promocao")
 @Controller
-public class DestinoController {
+public class AdminPromocaoController {
 	
-	private String nome = "destino";
+	private String nome = "promocao";
 	
 	@Autowired
-	private DestinoService service;
+	private PromocaoService service;
+	
+	@Autowired
+	private DestinoService destinoService;
 
 	@GetMapping
 	public ModelAndView lista() {
 		
-		List<Destino> destinos = service.findAll();
+		List<Promocao> lista = service.findAll();
 		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/lista");
-		mav.addObject("lista", destinos);
+		mav.addObject("lista", lista);
 		return mav;
 	}
 	
 	@GetMapping("/novo")
 	public ModelAndView formularioCriar() {
 		
-		Destino item = new Destino();
+		Promocao item = new Promocao();
+		List<Destino> destinos = destinoService.findAll();
 		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/formulario");
 		mav.addObject("method", "POST");
 		mav.addObject("item", item);
+		mav.addObject("destinos", destinos);
 		return mav;
 	}
 	
 	@GetMapping("/{id}")
 	public ModelAndView formularioEditar(@PathVariable Integer id) {
 		
-		Destino item = service.findById(id);
+		Promocao item = service.findById(id);
+		List<Destino> destinos = destinoService.findAll();
 		ModelAndView mav = new ModelAndView("/admin/"+ nome +"/formulario");
 		mav.addObject("method", "PUT");
 		mav.addObject("item", item);
+		mav.addObject("destinos", destinos);
 		return mav;
 	}
 	
-	@PostMapping
-	public String create(Destino item) {
+	@GetMapping("/destino/{idDestino}")
+	public ResponseEntity<List<Promocao>> buscaPromocoesPorDestino(
+			@PathVariable Integer idDestino) {
 		
-		service.create(item);
+		List<Promocao> promocoes = service.findByIdDestino(idDestino);
+		
+		return ResponseEntity.ok().body(promocoes);
+	}
+	
+	@PostMapping
+	public String create(Promocao novo) {
+		
+		System.out.println(novo);
+		
+		service.create(novo);
 		return "redirect:/admin/"+ nome;
 	}
 	
 	@PutMapping
-	public String update(Destino item) {
+	public String update(Promocao novo) {
 		
-		service.update(item);
+		service.update(novo);
 		return "redirect:/admin/"+ nome;
 	}
 	
