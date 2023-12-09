@@ -30,7 +30,7 @@ public class Promocao implements Serializable {
 	private LocalDate dataTermino;
 	private Double desconto;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "fk_destino_id")
 	private Destino destino;
 	

@@ -25,15 +25,15 @@ public class Pedido implements Serializable {
 	private LocalTime horaCompra;
 	private Double precoCompra;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "fk_cliente_cpf")
 	private Cliente cliente;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "fk_passagem_id")
 	private Passagem passagem;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "fk_forma_pagamento_id")
 	private FormaPagamento formaPagamento;
 	

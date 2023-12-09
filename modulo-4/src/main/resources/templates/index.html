@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,113 +8,124 @@
 	<meta property="og:title" content="Dream Travel Agência de Viagens" />
 
 	<link rel="shortcut icon" href="img/icone.jpeg" type="image/x-icon">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 
 	<link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
 
 
-	<title> Dream Travel | Agência de Viagens </title> 
+	<title> Dream Travel | Agência de Viagens </title>
 
 </head>
+
 <body>
 
-   <!-- CABEÇALHO -->
+	<!-- CABEÇALHO -->
 
 	<div class="container-fluid">
 
-	    <header th:replace="reusavel::header('/')">Header</header>
-   
-  <!-- Página inicial do site-->
- 
+		<header th:replace="reusavel::header('/')">Header</header>
 
-<!--Passagem-->
-	<div class="container-fluid bg-degrade">
+		<!-- Página inicial do site-->
 
-    	<div class="container">
 
-        	<form th:object="${form}" th:action="@{/}" method="POST">
-            	<div class="row">
-                	<div class="col-md-6">
-                    	<h3 class="mt-3 text-light text-justify"> BUSCAR PASSAGENS </h3>
-                	</div>                	
-            	</div>
+		<!--Passagem-->
+		<div class="container-fluid bg-degrade">
 
-            	<div class="row mt-3">					
-                	<div class="col-md-6">
-                    	<label class="text-light form-label" for="saida">De onde você está saindo?</label>
+			<div class="container">
 
-                    	<input type="text" class="form-control" th:field="*{origem}"
-                       		placeholder="Informe o ponto de partida">
-                	</div>
-
-                	<div class="col-md-6">
-	                    <label class="text-light form-label" for="destino">Para onde você vai?</label>
-	
-	                    <input type="text" class="form-control" th:field="*{destino}"
-	                        placeholder="Informe o destino">
-                	</div>
-            	</div>
-            	
-            	<div class="row mt-3">
-                	<div class="col-md-6">
-                    	<label class="text-light form-label" for="data">Escolha as datas (Ida / volta):</label>
-
-                    	<input class="p-2" type="date" th:field="*{dataInicio}">
-
-                    	<input class="p-2" type="date" th:field="*{dataTermino}">
-                	</div>
-                	
-	                <div class="col-md-6 mb-3 text-justify">
-	                    <button class="btn bg-buscar"> BUSCAR PASSAGENS </button>
-	                </div>
-            	</div>
-
-            <div class="row mt-3">
-            </div>
-        </form>
-    </div>
-
-</div>
-
-  <!--Seção de Viagens em Destaque --> 
-
-<main class="container-fluid mb-5">
-	
-	<div class="col-12 mt-5 text-center">
-        <h2 class="mb-4 text-padrao"> Viagens em Destaque</h2>
-		<p> Aqui, você encontrará as melhores opções de viagens para os destinos mais incríveis do mundo. </p>
-    </div> 
-
- 	<div class="row">
-		 
-		 <div 
-		 	th:each="passagem : ${passagens}"
-		 	th:object="${passagem}"
-		 	class="col-md-3 col-sm-6">
-      		<div class="card text-center">
-        		<img th:if="*{destino.imagem != null}" th:src="*{destino.imagemBase64}" 
-        			class="card-img-top" alt="Paris">
-        		<div class="card-body">
-		        	<h4 class="card-title" th:text="*{destino.nome}">Paris</h4>
-		        	<div th:if="*{promocao == null}">
-						R$ <span th:text="*{destino.precoMedio}">5.300</span> 
+				<form th:object="${form}" th:action="@{/}" method="POST">
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="mt-3 text-light text-justify"> BUSCAR PASSAGENS </h3>
+						</div>
 					</div>
-					<div th:if="*{promocao != null}">						
-			        	<p class="card-text text-danger m-0 small">
-							De R$ <del th:text="*{destino.precoMedio}"> R$ 6.000 </del> Por 
-						</p>
-			        	<h4 class="card-text text-success">
-							R$ <span th:text="*{promocao.valorPromocional}">5.300</span> 
-						</h4>
+
+					<div class="row mt-3">
+						<div class="col-md-6">
+							<label class="text-light form-label" for="saida">De onde você está saindo?</label>
+
+							<input type="text" class="form-control" th:field="*{origem}"
+								placeholder="Informe o ponto de partida">
+						</div>
+
+						<div class="col-md-6">
+							<label class="text-light form-label" for="destino">Para onde você vai?</label>
+
+							<input type="text" class="form-control" th:field="*{destino}"
+								placeholder="Informe o destino">
+						</div>
 					</div>
-          
-          			<a th:href="@{/passagem/{id}(id=*{id})}" class="btn btn-primary">Saiba mais</a>
-        		</div>
-      		</div>
-    	</div>
-		 
-<!--    	<div class="col-md-3 col-sm-6">
+
+					<div class="row mt-3">
+						<div class="col-md-6">
+							<label class="text-light form-label" for="data">Escolha as datas (Ida / volta):</label>
+							<div class="row">								
+	
+								<div class="col-md-6">									
+									<input class="form-control" type="date" th:field="*{dataInicio}">
+								</div>								
+	
+								<div class="col-md-6">									
+									<input class="form-control" type="date" th:field="*{dataTermino}">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6 mb-3 text-justify">
+							<button class="btn bg-buscar"> BUSCAR PASSAGENS </button>
+						</div>
+					</div>
+
+					<div class="row mt-3">
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<!--Seção de Viagens em Destaque -->
+
+		<main class="container-fluid mb-5">
+
+			<div class="col-12 mt-5 text-center">
+				<h2 class="mb-4 text-padrao"> Viagens em Destaque</h2>
+				<p> Aqui, você encontrará as melhores opções de viagens para os destinos mais incríveis do mundo. </p>
+			</div>
+
+			<div class="row">
+
+				<div th:each="passagem : ${passagens}" th:object="${passagem}" class="col-sm-6 col-lg-4 mt-2">
+					<div class="card text-center">
+						<img th:if="*{destino.imagem != null}" th:src="*{destino.imagemBase64}" class="card-img-top"
+							alt="Paris">
+						<div class="card-body">
+							<h4 class="card-title" th:text="*{destino.nome}">Paris</h4>
+							<div>
+								Origem: <span th:text="*{origem}">Origem</span>
+							</div>
+							<div>
+								Data de partida: <span th:text="*{dataPartida}">partida</span>
+							</div>
+							<div th:if="*{promocao == null}">
+								R$ <span th:text="*{destino.precoMedio}">5.300</span>
+							</div>
+							<div th:if="*{promocao != null}">
+								<p class="card-text text-danger m-0 small">
+									De R$ <del th:text="*{destino.precoMedio}"> R$ 6.000 </del> Por
+								</p>
+								<h4 class="card-text text-success">
+									R$ <span th:text="*{promocao.valorPromocional}">5.300</span>
+								</h4>
+							</div>
+
+							<a th:href="@{/passagem/{id}(id=*{id})}" class="btn btn-primary">Saiba mais</a>
+						</div>
+					</div>
+				</div>
+
+				<!--    	<div class="col-md-3 col-sm-6">
       		<div class="card text-center">
         		<img src="img/paris.jpg" class="card-img-top" alt="Paris">
         		<div class="card-body">
@@ -125,8 +137,8 @@
         		</div>
       		</div>
     	</div>-->
- 
-<!--    	<div class="col-md-3 col-sm-6">
+
+				<!--    	<div class="col-md-3 col-sm-6">
         	<div class="card text-center">
             	<img class="card-img-top" src="img/Disney.jpg" alt="Disney">
             	<div class="card-body">
@@ -139,7 +151,7 @@
         	</div>
     	</div>-->
 
-<!--    	<div class="col-md-3 col-sm-6">
+				<!--    	<div class="col-md-3 col-sm-6">
 
 	        <div class="card text-center">
 	            <img class="card-img-top" src="img/gramado.jpg" alt="Gramado">
@@ -155,7 +167,7 @@
 
     	</div>-->
 
-<!--    	<div class="col-md-3 col-sm-6">
+				<!--    	<div class="col-md-3 col-sm-6">
 
 	        <div class="card text-center">
 	            <img class="card-img-top" src="img/Bariloche.jpg" alt="Bariloche">
@@ -171,7 +183,7 @@
 
     	</div>-->
 
-<!--	    <div class="col-md-3 col-sm-6">
+				<!--	    <div class="col-md-3 col-sm-6">
 	
 	        <div class="card text-center">
 	            <img class="card-img-top" src="img/Rio.jpg" alt="Rio">
@@ -187,7 +199,7 @@
 	
 	    </div>-->
 
-<!--	    <div class="col-md-3 col-sm-6">
+				<!--	    <div class="col-md-3 col-sm-6">
 	
 	        <div class="card text-center">
 	            <img class="card-img-top" src="img/MorrodeSP.jpg" alt="Morro de Sao Paulo">
@@ -203,7 +215,7 @@
 	
 	    </div>-->
 
-<!--	    <div class="col-md-3 col-sm-6">
+				<!--	    <div class="col-md-3 col-sm-6">
 	
 	        <div class="card text-center">
 	            <img class="card-img-top" src="img/recife.jpg" alt="Recife">
@@ -219,7 +231,7 @@
 	
 	    </div>-->
 
-<!--	    <div class="col-md-3 col-sm-6">
+				<!--	    <div class="col-md-3 col-sm-6">
 	
 	        <div class="card text-center">
 	            <img class="card-img-top" src="img/betocarrero.jpg" alt="betocarrero">
@@ -233,17 +245,21 @@
 	            </div>
 	        </div>
 	
-	    </div>-->	    
-	</div>
+	    </div>-->
+			</div>
 
-    <i onclick="subirTela()" class="ri-arrow-up-s-line" id="icon-top"></i>
+			<i onclick="subirTela()" class="ri-arrow-up-s-line" id="icon-top"></i>
 
-	<footer th:replace="reusavel::footer">Footer</footer>
+			<footer th:replace="reusavel::footer">Footer</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script th:src="@{/js/todo.js}"></script>
+<!--			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+				crossorigin="anonymous"></script>-->
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+			<script th:src="@{/js/todo.js}"></script>
 </body>
 
 </html>
