@@ -7,7 +7,7 @@
 	<meta property="og:title" content="Dream Travel Agência de Viagens" />
 	<link rel="shortcut icon" href="img/icone.jpeg" type="image/x-icon">	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
-	<link rel="stylesheet" href="@{/css/style.css}">	
+	<link rel="stylesheet" th:href="@{/css/style.css}">	
 	<link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
 	<title> Dream Travel | Agência de Viagens </title> 
 </head>
@@ -15,9 +15,9 @@
 
    <!-- CABEÇALHO -->
 
-   <div class="container-fluid mt-3">
+   <div class="container-fluid">
 
-		<header th:replace="reusavel::header">Header</header>
+		<header th:replace="reusavel::header('/destino')">Header</header>
    
 		  <div class="row mt-4">
 		      <div class="col-12 text-center">
@@ -97,25 +97,8 @@
 		
 	</div>
 
-    <footer class="container-fluid bg-light">
+	<footer th:replace="reusavel::footer">Footer</footer>
 
-	    <div class="row mt-5 mb-5">
-	  
-	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="sobrenos.html"> Sobre Nós </a>
-	        </div>
-	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="centralajuda.html"> Central de ajuda
-	        </a> </div>
-	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="duvidas.html"> Dúvidas </a> </div>
-	        <div class="col-lg-3 col-sm-4 small"> <a class="link_rodape" href="trabalheconosco.html"> Trabalhe
-	        conosco</a> </div>
-	  
-	    </div>
-
-	    <div class="row mt-4 mb-3">
-	        <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
-	    </div>
-   
-    </footer>
  	<script src="todo.js"></script>
 
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

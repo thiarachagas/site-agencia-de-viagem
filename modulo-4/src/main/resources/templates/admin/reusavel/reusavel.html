@@ -4,7 +4,7 @@
 	
 </head>
 <body>
-	<header th:fragment="header">
+	<header th:fragment="header(rota)">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
 				<span class="navbar-brand">Dream Travel</span>
@@ -13,38 +13,50 @@
 			  	</button>
 			    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			    	<div class="navbar-nav">
-			      		<a class="nav-item nav-link active" 
-			      			th:href="@{/admin/pedido}">
+			      		<a class="nav-item nav-link" 
+			      			th:href="@{/admin/pedido}"
+			      			th:classappend="${rota} == '/admin/pedido' ? 'active' : ''">
 			      			Pedidos
 		      			</a>
 			      		<a class="nav-item nav-link" 
-			      			th:href="@{/admin/passagem}">
+			      			th:href="@{/admin/passagem}"
+			      			th:classappend="${rota} == '/admin/passagem' ? 'active' : ''">
 					  		Passagens
 					    </a>
 			      		<a class="nav-item nav-link" 
-			      			th:href="@{/admin/destino}">
+			      			th:href="@{/admin/destino}"
+			      			th:classappend="${rota} == '/admin/destino' ? 'active' : ''">
 					  		Destinos
 				  		</a>
 			      		<a class="nav-item nav-link" 
-			      			th:href="@{/admin/promocao}">
+			      			th:href="@{/admin/promocao}"
+			      			th:classappend="${rota} == '/admin/promocao' ? 'active' : ''">
 					  		Promoções
 				  		</a>
 			      		<a class="nav-item nav-link" 
-			      			th:href="@{/admin/forma-pagamento}">
+			      			th:href="@{/admin/forma-pagamento}"
+			      			th:classappend="${rota} == '/admin/forma-pagamento' ? 'active' : ''">
 					  		Formas de Pagamento
 				  		</a>
 				  		<a class="nav-item nav-link" 
-				  			th:href="@{/admin/companhia-aerea}">
+				  			th:href="@{/admin/companhia-aerea}"
+				  			th:classappend="${rota} == '/admin/companhia-aerea' ? 'active' : ''">
 					  		Companhias Aéreas
 				  		</a>
 				  		<a class="nav-item nav-link" 
-				  			th:href="@{/admin/cliente}">
+				  			th:href="@{/admin/cliente}"
+				  			th:classappend="${rota} == '/admin/cliente' ? 'active' : ''">
 					  		Clientes
 				  		</a>
 				  		<a class="nav-item nav-link" 
-				  			th:href="@{/admin/contato}">
+				  			th:href="@{/admin/contato}"
+				  			th:classappend="${rota} == '/admin/contato' ? 'active' : ''">
 					  		Contatos
 				  		</a>
+				  		<a class="nav-item nav-link" 
+				  			th:href="@{/}">
+					  		Ver Site
+				  		</a>				  		
 			    	</div>
 			  	</div>
 			</div>

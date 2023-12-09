@@ -18,7 +18,7 @@
 <body>
 	
 	<div class="container-fluid">
-		<header th:replace="reusavel::header">Header</header>
+		<header th:replace="reusavel::header('/pedido')">Header</header>
 		
 		<main>
 			
@@ -61,7 +61,7 @@
 			
 		</main>
 		
-		<footer></footer>
+		<footer th:replace="reusavel::footer">Footer</footer>
 	</div>
 	
 </body>

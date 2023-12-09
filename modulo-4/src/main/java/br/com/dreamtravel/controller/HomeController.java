@@ -44,4 +44,19 @@ public class HomeController {
 		mav.addObject("passagens", lista);
 		return mav;
 	}
+	
+	@GetMapping("/sobre-nos")
+	public String sobreNos() {
+		return "/sobre-nos";
+	}
+	
+	@GetMapping("/central-de-ajuda")
+	public String centralDeAjuda() {
+		return "/central-de-ajuda";
+	}
+	
+	@GetMapping("/duvidas")
+	public String duvidas() {
+		return "/duvidas";
+	}
 }
