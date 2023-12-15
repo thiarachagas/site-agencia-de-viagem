@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Dream Travel Agência de Viagens" />
+
+	<link rel="shortcut icon" th:href="@{/img/icone.jpeg}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{/img/icone.png}" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<title> Dream Travel | Agência de Viagens </title>
+</head>
+
+<body>
+	<!-- CABEÇALHO -->
+
+	<div class="container-fluid">
+
+		<header th:replace="reusavel::header('/contato')">Header</header>
+
+	</div>
+
+	<main>
+
+		<!-- Seção de cabeçalho -->
+		<div class="header-section container">
+			<div class="row mt-3">
+				<div class="col-12">
+					<h3 class="text-center text-padrao"> Fale conosco </h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- Seção principal -->
+		<div class="page-container">
+
+			<div class="form-container container">
+				<div class="row mt-3">
+					<form th:action="@{/contato}" th:object="${contato}" method="post" class="col-12">
+						<div class="form-group">
+							<label for="nome">Nome:</label>
+							<input type="text" class="form-control" th:field="*{nome}" placeholder="Digite seu nome"
+								maxlength="50" required>
+						</div>
+						<div class="form-group">
+							<label for="email">E-mail:</label>
+							<input type="email" class="form-control" th:field="*{email}"
+								placeholder="Digite seu e-mail (nome@dominio)" maxlength="40" required>
+						</div>
+						<div class="form-group">
+							<label for="mensagem">Mensagem:</label>
+							<textarea class="form-control" rows="5" th:field="*{mensagem}"
+								placeholder="Digite sua mensagem aqui" required></textarea>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-primary" type="submit">Enviar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Formas de pagamento -->
+		<div class="mt-4 container">
+			<h4>Formas de Pagamento</h4>
+			<img src="img/formasdepag.png" alt="Formas de Pagamento" class="img-fluid">
+		</div>
+
+		<!-- Mapa de Localização -->
+		<div class="mt-5 container-fluid">
+			<div>
+				<h4>Localização</h4>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.028149288526!2d-46.63611228554617!3d-23.55196126728761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c174d2a76e7%3A0xb6df4868d7b5e4d0!2sS%C3%A3o%20Paulo%20Tourist%20Center!5e0!3m2!1sen!2sbr!4v1623836546438!5m2!1sen!2sbr"
+					width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+		</div>
+
+	</main>
+
+	<footer th:replace="reusavel::footer">Footer</footer>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="todo.js"></script>
+</body>
+
+</html>

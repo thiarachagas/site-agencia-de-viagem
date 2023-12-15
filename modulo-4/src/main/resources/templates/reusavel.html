@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+    <header th:fragment="header(rota)">
+		<nav class="bg-white navbar navbar-expand-sm navbar-light bg-light">
+			
+	        <a class="navbar-brand" href="#">
+				<img th:src="@{/img/agencia_viagens_small.png}" alt="Logo" height="120px">
+			</a>
+			
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		      	<span class="navbar-toggler-icon"></span>
+		    </button>
+		    
+		    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	      		<ul class="navbar-nav ml-auto">
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/}"
+		          			th:classappend="${rota} == '/' ? 'active' : ''">
+		          			Home
+	          			</a>
+			        </li>
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/destino}"
+		          			th:classappend="${rota} == '/destino' ? 'active' : ''">
+		          			Destinos
+	          			</a>
+			        </li>
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/promocao}"
+		          			th:classappend="${rota} == '/promocao' ? 'active' : ''">
+		          			Promoções
+	          			</a>
+			        </li>
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/passagem}"
+		          			th:classappend="${rota} == '/passagem' ? 'active' : ''">
+		          			Passagens
+	          			</a>
+			        </li>			        
+			        <li class="nav-item">
+		          		<a class="nav-link" th:href="@{/contato}"
+		          			th:classappend="${rota} == '/contato' ? 'active' : ''">
+		          			Contato
+	          			</a>
+			        <li class="nav-item">
+		            	<a class="nav-link" th:href="@{/admin/pedido}">Admin</a>
+			        </li>
+	      		</ul>
+		    </div>
+		</nav>
+	</header>
+    <footer class="container bg-light" th:fragment="footer">
+		
+        <div class="row mt-4 mb-5">
+
+            <div class="col-lg-4 col-sm-4 small">
+				<a class="link_rodape" th:href="@{/sobre-nos}"> Sobre nós </a>
+            </div>
+            <div class="col-lg-4 col-sm-4 small"> 
+				<a class="link_rodape" th:href="@{/central-de-ajuda}"> Central de ajuda </a> 
+			</div>
+            <div class="col-lg-4 col-sm-4 small"> 
+				<a class="link_rodape" th:href="@{/duvidas}"> Dúvidas </a> 
+			</div>
+        </div>
+
+        <div class="row mt-4 mb-3">
+            <div class="col-12 text-center"> &copy 2023 - Dream Travel Agência de Viagens </div>
+        </div>
+
+    </footer>
+</body>
+</html>
