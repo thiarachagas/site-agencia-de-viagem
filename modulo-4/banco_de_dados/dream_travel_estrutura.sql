@@ -3,6 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+-- Tempo de geração: 17-Dez-2023 às 20:58
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dream_travel`
+-- Banco de dados: `dream_travel_modulo4`
 --
 
 -- --------------------------------------------------------
