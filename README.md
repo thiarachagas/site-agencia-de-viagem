@@ -19,6 +19,8 @@ Usar classes Java, JDBC e MySql.
 
 Front-end: Atualização da versão anterior do site, refatorando se preciso as páginas: Home, Destino, Promoções, Contato e as demais de acordo com seu modelo de dados usando HTML, CSS Bootstrap.
 
+Para executar este módulo, sugerimos criar uma base de dados `dream_travel_modulo3`. Os arquivos de modelo e banco de dados estão na subpasta `modelagem_dados`.
+
 # MÓDULO 04
 
 Banco de dados: Ajustes no modelo lógico do banco de dados (Tabelas, atributos e relacionamentos) se houver necessidades, implementar o banco de dados no Mysql de forma manual ou usando o ORM (Object-Relational Mapping ou em português mapeamento objeto-relacional).
@@ -26,6 +28,8 @@ Banco de dados: Ajustes no modelo lógico do banco de dados (Tabelas, atributos 
 Back-end: Construção o back-end usando tecnologias Java (Estrutura de dados Classes), conexão com MySql usando o padrão de projeto MVC (Implementado o CRUD básico para todas as tabelas do modelo de dados).
 
 Front-end: Criação de uma nova versão do site usando o padrão de projeto MVC (Model, View, Controller (Conectar todas as telas de cadastro ao banco de dados usando o padrão de projetos MVC).
+
+Para executar este módulo, sugerimos criar uma base de dados `dream_travel_modulo4`. Os arquivos de modelo e banco de dados estão na subpasta `banco_de_dados`.
 
 # MÓDULO 05
 
@@ -36,6 +40,8 @@ Banco de dados: Criação / Atualização da base de dados usando o padrão NoSq
 Back-end: Refatorar o código anterior usando os padrões de projeto MVC e Persistência de dados com os frameworks Spring para a organização da aplicação. 
   
 Front-end: As views da aplicação serão baseadas no padrão MVC usando opcionalmente a biblioteca React ou qualquer Java template engine (Thymeleaf).
+
+Para executar este módulo, sugerimos criar uma base de dados `dream_travel_modulo5`. Os arquivos de modelo e banco de dados estão na subpasta `banco_de_dados`.
  
 # MÓDULO 06
 
