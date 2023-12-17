@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+</head>
+<body>
+	<header th:fragment="header(rota)">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<span class="navbar-brand">Dream Travel</span>
+			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			        <span class="navbar-toggler-icon"></span>
+			  	</button>
+			    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			    	<div class="navbar-nav">
+			      		<a class="nav-item nav-link" 
+			      			th:href="@{/admin/pedido}"
+			      			th:classappend="${rota} == '/admin/pedido' ? 'active' : ''">
+			      			Pedidos
+		      			</a>
+			      		<a class="nav-item nav-link" 
+			      			th:href="@{/admin/passagem}"
+			      			th:classappend="${rota} == '/admin/passagem' ? 'active' : ''">
+					  		Passagens
+					    </a>
+			      		<a class="nav-item nav-link" 
+			      			th:href="@{/admin/destino}"
+			      			th:classappend="${rota} == '/admin/destino' ? 'active' : ''">
+					  		Destinos
+				  		</a>
+			      		<a class="nav-item nav-link" 
+			      			th:href="@{/admin/promocao}"
+			      			th:classappend="${rota} == '/admin/promocao' ? 'active' : ''">
+					  		Promoções
+				  		</a>
+			      		<a class="nav-item nav-link" 
+			      			th:href="@{/admin/forma-pagamento}"
+			      			th:classappend="${rota} == '/admin/forma-pagamento' ? 'active' : ''">
+					  		Formas de Pagamento
+				  		</a>
+				  		<a class="nav-item nav-link" 
+				  			th:href="@{/admin/companhia-aerea}"
+				  			th:classappend="${rota} == '/admin/companhia-aerea' ? 'active' : ''">
+					  		Companhias Aéreas
+				  		</a>
+				  		<a class="nav-item nav-link" 
+				  			th:href="@{/admin/cliente}"
+				  			th:classappend="${rota} == '/admin/cliente' ? 'active' : ''">
+					  		Clientes
+				  		</a>
+				  		<a class="nav-item nav-link" 
+				  			th:href="@{/admin/contato}"
+				  			th:classappend="${rota} == '/admin/contato' ? 'active' : ''">
+					  		Contatos
+				  		</a>
+				  		<a class="nav-item nav-link" 
+				  			th:href="@{/}">
+					  		Ver Site
+				  		</a>
+				        <form th:action="@{/logout}" method="post">
+				            <button class="btn nav-item nav-link">Sair</button>
+				        </form>
+			    	</div>
+			  	</div>
+			</div>
+			</nav>
+	</header>
+</body>
+</html>

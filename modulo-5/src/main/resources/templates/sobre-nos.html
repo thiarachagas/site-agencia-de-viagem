@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Dream Travel Agência de Viagens" />
+	
+	<link rel="shortcut icon" href="img/icone.jpeg" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	
+	<link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+	
+	
+	<title> Dream Travel | Agência de Viagens </title> 
+
+</head>
+<body>
+
+   <!-- CABEÇALHO -->
+
+   <div class="container-fluid">
+	   
+	   <header th:replace="reusavel::header('')">Header</header>
+	   
+	  	<div class="container">
+	
+	    	<div class="row">
+	
+	        	<div class="col-12 mt-3 mb-3">
+	
+	            	<h4 class="text-primary"> Sobre Nós </h4>
+	
+				  	<section class="about-section">
+					    <div class="container">
+					        <p>Bem-vindo à Dream Travel, onde transformamos sonhos de viagem em realidade. Fundada em 2020 por entusiastas apaixonados por explorar o mundo, nossa agência nasceu da crença de que cada viagem deve ser uma experiência inesquecível.</p>
+					        <p>Desde o início, buscamos proporcionar não apenas destinos excepcionais, mas também momentos que ficarão gravados na memória de nossos clientes. Com uma equipe dedicada e conhecimento aprofundado em destinos globais, estamos aqui para tornar sua próxima aventura verdadeiramente especial.</p>
+					    </div>
+					</section>
+	
+					<section class="mission-section">
+					    <div class="container">
+					        <h4 class="text-primary">Missão, Visão e Valores</h4>
+					        <p>Nossa missão é inspirar e capacitar viajantes a descobrir o extraordinário em todo o mundo. Queremos ser a escolha natural para aqueles que buscam experiências autênticas, serviço excepcional e momentos que durarão a vida toda.</p>
+					        <p>Nossa visão é ser reconhecida como uma agência de viagens líder, conhecida por sua inovação, paixão pelo cliente e compromisso com a excelência. Guiados por nossos valores fundamentais de integridade, respeito e excelência, estamos determinados a criar jornadas que vão além das expectativas.</p>
+					    </div>
+					</section>
+	  
+					<footer th:replace="reusavel::footer">Footer</footer>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
+

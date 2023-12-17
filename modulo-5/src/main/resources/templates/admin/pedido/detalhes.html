@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Dream Travel Agência de Viagens" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+	<header th:replace="/admin/reusavel/reusavel::header('/admin/pedido')">
+		Header
+	</header>
+	<main>
+		<div class="container pb-5">
+			<div class="d-flex mt-3 align-items-center">				
+				<a class="btn btn-secondary" style="margin-right: 10px;" th:href="@{/admin/pedido}">Voltar</a>
+				<h1>Pedidos</h1>
+			</div>
+			<div th:object="${item}">
+				<div>
+					ID: <span th:text="*{id}">ID</span>
+				</div>
+				<div>
+					Data da compra: <span th:text="*{dataCompra}">Data</span>
+				</div>
+				<div>
+					Hora da compra: <span th:text="*{horaCompra}">Hora</span>
+				</div>
+				<div>
+					Preço: <span th:text="*{precoCompra}">Preço</span>
+				</div>
+				<hr>
+				<div>
+					<h3>Cliente:</h3>
+					<div th:object="${item.cliente}">
+						<div>
+							CPF: <span th:text="*{cpf}">CPF</span>
+						</div>
+						<div>
+							E-mail: <span th:text="*{email}">E-mail</span>
+						</div>
+						<div>
+							Telefone: <span th:text="*{tel}">E-mail</span>
+						</div>						
+						<div>
+							Nome: <span th:text="*{nome}">Nome</span>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div>
+					<h3>Passagem:</h3>
+					<div th:object="${item.passagem}">
+						<div>
+							ID: <span th:text="*{id}">ID</span>
+						</div>
+						<div>
+							Origem: <span th:text="*{origem}">Origem</span>
+						</div>
+						<div>
+							Data de partida: <span th:text="*{dataPartida}">Data de partida</span>
+						</div>
+						<hr>
+						<div>
+							<h3>Destino:</h3> 
+							<div th:object="${item.passagem.destino}">
+								<div>
+									ID: <span th:text="*{id}">ID Destino</span>
+								</div>
+								<div>
+									Nome: <span th:text="*{nome}">Nome</span>
+								</div>
+								<div>
+									Localização: 
+									<span th:text="*{localizacao}">
+										Localização
+									</span>
+								</div>
+							</div>
+						</div>
+						<div th:object="${item.passagem.promocao}" 
+							th:if="${item.passagem.promocao != null}">
+							<hr>
+							<h3>Promoção:</h3>
+							<div>
+								ID: <span th:text="*{id}">ID Promoção</span>
+							</div>
+							<div>
+								Nome: <span th:text="*{nome}">Nome</span>
+							</div>
+							<div>
+								Data de Início: 
+								<span th:text="*{dataInicio}">Data de Início</span>
+							</div>
+							<div>
+								Data de Término:
+								<span th:text="*{dataTermino}">Data de Término</span>
+							</div>
+							<div>
+								Desconto:
+								<span th:text="*{desconto}">Desconto</span>
+							</div>
+						</div>
+						<hr>
+						<div>
+							<h3>Companhia Aérea:</h3>
+							<div th:object="${item.passagem.companhiaAerea}">
+								<div>
+									ID: <span th:text="*{id}">ID</span>
+								</div>
+								<div>
+									Nome: <span th:text="*{nome}">Nome</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div>
+					<h3>Forma de pagamento:</h3>
+					<div th:object="${item.formaPagamento}">
+						<div>
+							ID: <span th:text="*{id}">ID</span>
+						</div>
+						<div>
+							Nome: <span th:text="*{nome}">Nome</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
