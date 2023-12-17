@@ -3,6 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+-- Tempo de geração: 17-Dez-2023 às 21:38
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dream_travel`
+-- Banco de dados: `dream_travel_modulo5`
 --
 
 -- --------------------------------------------------------
@@ -62,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `contato` (
   `email` varchar(255) NOT NULL,
   `mensagem` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -156,6 +157,47 @@ CREATE TABLE IF NOT EXISTS `promocao` (
   KEY `FKkl7rklhor08dwexr0kdwef7n` (`destino_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE IF NOT EXISTS `role` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user_roles`
+--
+
+DROP TABLE IF EXISTS `user_roles`;
+CREATE TABLE IF NOT EXISTS `user_roles` (
+  `fk_user_id` int NOT NULL,
+  `fk_role_id` int NOT NULL,
+  PRIMARY KEY (`fk_user_id`,`fk_role_id`),
+  KEY `fk_role_id` (`fk_role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 --
 -- Restrições para despejos de tabelas
 --
@@ -182,6 +224,13 @@ ALTER TABLE `pedido`
 ALTER TABLE `promocao`
   ADD CONSTRAINT `FK_Promocoes_2` FOREIGN KEY (`fk_destino_id`) REFERENCES `destino` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FKkl7rklhor08dwexr0kdwef7n` FOREIGN KEY (`destino_id`) REFERENCES `destino` (`id`);
+
+--
+-- Limitadores para a tabela `user_roles`
+--
+ALTER TABLE `user_roles`
+  ADD CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`fk_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`fk_role_id`) REFERENCES `role` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
