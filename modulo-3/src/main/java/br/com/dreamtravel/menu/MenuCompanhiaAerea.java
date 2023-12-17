@@ -102,6 +102,7 @@ public class MenuCompanhiaAerea implements Menu {
 		
 		System.out.print("Id: ");
 		int id = scanner.nextInt();
+		scanner.nextLine();
 		
 		CompanhiaAerea c = (CompanhiaAerea) crud.busca(id);
 		

@@ -50,6 +50,7 @@ public class MenuDestino implements Menu {
 	public void atualiza() {
 		
 		System.out.println("\nAtualiza Destino\n");
+		lista();
 		Destino d = buscaRegistro();
 		
 		if (d == null) {
@@ -67,6 +68,7 @@ public class MenuDestino implements Menu {
 	public void exclui() {
 
 		System.out.println("\nExclui Destino\n");
+		lista();
 		Destino d = buscaRegistro();
 		
 		if (d == null) {

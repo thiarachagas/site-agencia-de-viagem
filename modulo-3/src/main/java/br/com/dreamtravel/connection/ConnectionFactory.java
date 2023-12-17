@@ -7,7 +7,7 @@ public class ConnectionFactory {
 	
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
-	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/dream_travel";
+	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/dream_travel_modulo3";
 	
 	public static Connection createConnectionToMySQL() throws Exception {
 		

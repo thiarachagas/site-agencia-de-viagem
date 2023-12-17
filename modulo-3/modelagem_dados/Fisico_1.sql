@@ -44,7 +44,8 @@ ALTER TABLE Promocao ENGINE = InnoDB;
 
 CREATE TABLE Pedido (
     Id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    Data_Compra DATETIME,
+    Data_Compra DATE,
+    Hora_Compra TIME,
     Preco_Compra NUMERIC(10,2),
     fk_Cliente_CPF CHAR(11),
     fk_Passagem_Id INTEGER,
