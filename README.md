@@ -19,7 +19,7 @@ Usar classes Java, JDBC e MySql.
 
 Front-end: Atualização da versão anterior do site, refatorando se preciso as páginas: Home, Destino, Promoções, Contato e as demais de acordo com seu modelo de dados usando HTML, CSS Bootstrap.
 
-Para executar este módulo, sugerimos criar uma base de dados `dream_travel_modulo3`. Os arquivos de modelo e banco de dados estão na subpasta `modelagem_dados`.
+Para executar este módulo, é sugerido criar uma base de dados `dream_travel_modulo3`. Os arquivos de modelo e banco de dados estão na subpasta `modelagem_dados`.
 
 # MÓDULO 04
 
@@ -29,7 +29,7 @@ Back-end: Construção o back-end usando tecnologias Java (Estrutura de dados Cl
 
 Front-end: Criação de uma nova versão do site usando o padrão de projeto MVC (Model, View, Controller (Conectar todas as telas de cadastro ao banco de dados usando o padrão de projetos MVC).
 
-Para executar este módulo, sugerimos criar uma base de dados `dream_travel_modulo4`. Os arquivos de modelo e banco de dados estão na subpasta `banco_de_dados`.
+Para executar este módulo, é sugerido criar uma base de dados `dream_travel_modulo4`. Os arquivos de modelo e banco de dados estão na subpasta `banco_de_dados`.
 
 # MÓDULO 05
 
@@ -41,7 +41,9 @@ Back-end: Refatorar o código anterior usando os padrões de projeto MVC e Persi
   
 Front-end: As views da aplicação serão baseadas no padrão MVC usando opcionalmente a biblioteca React ou qualquer Java template engine (Thymeleaf).
 
-Para executar este módulo, sugerimos criar uma base de dados `dream_travel_modulo5`. Os arquivos de modelo e banco de dados estão na subpasta `banco_de_dados`.
+Para executar este módulo, é sugerido criar uma base de dados `dream_travel_modulo5`. Os arquivos de modelo e banco de dados estão na subpasta `banco_de_dados`.
+
+Para fazer login, pode-se usar a conta `admin`com senha `123`. Pode-se criar uma conta própria também.
  
 # MÓDULO 06
 
